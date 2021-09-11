@@ -32,6 +32,10 @@ WorkManager::WorkManager()
 
 	//this->m_EmpArray = NULL;
 	//this->m_EmpNum = 0;
+
+
+
+
 }
 
 void WorkManager::Show_Menu()
