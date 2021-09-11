@@ -13,6 +13,7 @@ WorkManager::WorkManager()
 		this->m_EmpArray = NULL;
 		this->m_FileIsEmpty = true;
 		ifs.close();
+		return;
 	}
 
 	//2.文件存在，数据为空
@@ -28,10 +29,13 @@ WorkManager::WorkManager()
 		this->m_EmpArray = NULL;
 		//初始化文件是否为空
 		this->m_FileIsEmpty = true;
+		ifs.close();
+		return;
 	}
 
-	//this->m_EmpArray = NULL;
-	//this->m_EmpNum = 0;
+	//3.文件存在，并且记录数据
+	int num = this->get_EmpNum();
+	cout << "职工人数为：" << num << endl;
 }
 
 void WorkManager::Show_Menu()
@@ -164,4 +168,23 @@ void WorkManager::save()
 	}
 	//关闭文件
 	ofs.close();
+}
+
+//统计文件中人数
+int WorkManager::get_EmpNum()
+{
+	ifstream ifs;
+	ifs.open(FILENAME, ios::in);//打开文件 读
+	int id;
+	string name;
+	int dId;
+
+	int num = 0;
+	while (ifs >> id && ifs >> name && ifs >> dId)
+	{
+		//
+		num++;
+	}
+
+	return num;
 }

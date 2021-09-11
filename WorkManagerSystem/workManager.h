@@ -33,5 +33,8 @@ public:
 
 	//文件是否存在
 	bool m_FileIsEmpty;
+
+	//统计文件中人数
+	int get_EmpNum();
 };
 
