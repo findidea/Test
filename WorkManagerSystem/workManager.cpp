@@ -224,3 +224,23 @@ void WorkManager::init_Emp()
 	//关闭文件
 	ifs.close();
 }
+
+//显示职工
+void WorkManager::show_Emp()
+{
+	//判断文件是否为空
+	if (this->m_FileIsEmpty)
+	{
+		cout << "文件不存在或者记录为空" << endl;
+	}
+	else
+	{
+		for (int i = 0; i < this->m_EmpNum; i++)
+		{
+			//利用多态调用程序接口
+			this->m_EmpArray[i]->showInfo();
+		}
+	}
+	system("pause");
+	system("cls");
+}
