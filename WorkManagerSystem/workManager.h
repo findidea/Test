@@ -17,7 +17,7 @@ public:
 
 	~WorkManager();
 
-	void exitSystem();
+	void ExitSystem();
 
 	//记录职工人数
 	int m_EmpNum;
@@ -29,18 +29,22 @@ public:
 	void Add_Emp();
 
 	//保存文件
-	void save();
+	void Save();
 
 	//文件是否存在
 	bool m_FileIsEmpty;
 
 	//统计文件中人数
-	int get_EmpNum();
+	int Get_EmpNum();
 
 	//初始化职工
-	void init_Emp();
+	void Init_Emp();
 
 	//显示职工
-	void show_Emp();
+	void Show_Emp();
+
+	//删除职工
+	void Del_Emp();
+	//判断职工是否存在，如果存在返回数组中的位置，不存在返回-1
 };
 

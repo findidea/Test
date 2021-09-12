@@ -34,13 +34,13 @@ WorkManager::WorkManager()
 	}
 
 	//3.文件存在，并且记录数据
-	int num = this->get_EmpNum();
+	int num = this->Get_EmpNum();
 	cout << "职工人数为：" << num << endl;
 	this->m_EmpNum = num;
 
 	//开辟空间
 	this->m_EmpArray = new Worker * [m_EmpNum];
-	this->init_Emp();
+	this->Init_Emp();
 }
 
 void WorkManager::Show_Menu()
@@ -66,7 +66,7 @@ WorkManager::~WorkManager()
 	}
 }
 
-void WorkManager::exitSystem()
+void WorkManager::ExitSystem()
 {
 	cout << "欢迎下次使用" << endl;
 	system("pause");
@@ -144,7 +144,7 @@ void WorkManager::Add_Emp()
 			this->m_FileIsEmpty = true;
 
 			//保存数据到文件中
-			this->save();
+			this->Save();
 
 			//提示添加成功
 			cout << "成功添加" << addNum << "名新职工!" << endl;
@@ -160,7 +160,7 @@ void WorkManager::Add_Emp()
 }
 
 //保存文件
-void WorkManager::save()
+void WorkManager::Save()
 {
 	ofstream ofs;
 	ofs.open(FILENAME, ios::out);//用输出的方式打开文件 --相当于就是写文件
@@ -176,7 +176,7 @@ void WorkManager::save()
 }
 
 //统计文件中人数
-int WorkManager::get_EmpNum()
+int WorkManager::Get_EmpNum()
 {
 	ifstream ifs;
 	ifs.open(FILENAME, ios::in);//打开文件 读
@@ -194,7 +194,7 @@ int WorkManager::get_EmpNum()
 	return num;
 }
 
-void WorkManager::init_Emp()
+void WorkManager::Init_Emp()
 {
 	ifstream ifs;
 	ifs.open(FILENAME, ios::in);
@@ -226,7 +226,7 @@ void WorkManager::init_Emp()
 }
 
 //显示职工
-void WorkManager::show_Emp()
+void WorkManager::Show_Emp()
 {
 	//判断文件是否为空
 	if (this->m_FileIsEmpty)

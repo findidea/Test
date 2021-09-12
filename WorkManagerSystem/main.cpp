@@ -32,13 +32,13 @@ int main(void)
 		switch (choice)
 		{
 		case 0://退出系统
-			wm.exitSystem();
+			wm.ExitSystem();
 			break;
 		case 1://增加职工
 			wm.Add_Emp();
 			break;
 		case 2://显示职工
-			wm.show_Emp();
+			wm.Show_Emp();
 			break;
 		case 3://删除职工
 			break;
