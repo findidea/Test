@@ -36,6 +36,11 @@ WorkManager::WorkManager()
 	//3.文件存在，并且记录数据
 	int num = this->get_EmpNum();
 	cout << "职工人数为：" << num << endl;
+	this->m_EmpNum = num;
+
+	//开辟空间
+	this->m_EmpArray = new Worker * [m_EmpNum];
+	this->init_Emp();
 }
 
 void WorkManager::Show_Menu()
@@ -187,4 +192,35 @@ int WorkManager::get_EmpNum()
 	}
 
 	return num;
+}
+
+void WorkManager::init_Emp()
+{
+	ifstream ifs;
+	ifs.open(FILENAME, ios::in);
+	int id;
+	string name;
+	int dId;
+
+	int index = 0;
+	while (ifs >> id && ifs >> name && ifs >> dId)
+	{
+		Worker* worker = NULL;
+		if (dId == 1)
+		{
+			worker = new Employee(id, name, dId);
+		}
+		else if (dId == 2)
+		{
+			worker = new Manager(id, name, dId);
+		}
+		else if (dId == 3)
+		{
+			worker = new Boss(id, name, dId);
+		}
+		this->m_EmpArray[index] = worker;
+		index++;
+	}
+	//关闭文件
+	ifs.close();
 }
