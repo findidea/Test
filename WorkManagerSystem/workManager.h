@@ -45,6 +45,8 @@ public:
 
 	//删除职工
 	void Del_Emp();
+
 	//判断职工是否存在，如果存在返回数组中的位置，不存在返回-1
+	int IsExist(int id);
 };
 
