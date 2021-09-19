@@ -351,6 +351,9 @@ void WorkManager::Mod_Emp()
 			//更新数据到数组中
 			this->m_EmpArray[ret] = worker;
 			cout << "修改成功!" << endl;
+
+			//保存到文件
+			this->Save();
 		}
 	}
 }
