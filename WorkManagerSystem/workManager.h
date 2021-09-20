@@ -51,5 +51,14 @@ public:
 
 	//修改职工
 	void Mod_Emp();
+
+	//查找员工
+	void Find_Emp();
+
+	//排序员工
+	void Sort_Emp();
+
+	//清空文件
+	void Clean_File();
 };
 
