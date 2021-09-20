@@ -510,6 +510,7 @@ void WorkManager::Clean_File()
 	cout << "1.È·¶¨" << endl;
 	cout << "2.·µ»Ø" << endl;
 
+
 	int select = 0;
 	cin >> select;
 
